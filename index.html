@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jason Alojado — Portfolio</title>
+<meta name="description" content="Portfolio of Jason Alojado">
+
+<!-- Open Graph (how the link looks when shared) -->
+<meta property="og:title" content="Jason Alojado — Portfolio">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<noscript>
+  <div style="padding:1.5rem;text-align:center;background:#f2f0ec;border-bottom:1px solid #e2ded6">
+    This site renders its content with JavaScript. Please enable it to view the portfolio.
+  </div>
+</noscript>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <!-- <span class="brand-name" data-bind="nav.brand">Jason Alojado - Portfolio</span> -->
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav class="nav" id="primaryNav" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications and Badges</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal data-bind="hero.eyebrow"></p>
+      <h1 class="hero-title" data-reveal>
+        <span data-bind="hero.name"></span>
+      </h1>
+      <p class="hero-tagline" data-reveal data-bind="hero.tagline"></p>
+      <p class="hero-blurb" data-reveal data-bind="hero.blurb"></p>
+      <div class="hero-actions" data-reveal>
+        <a class="btn btn-primary" href="#work">See my work</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+      <ul class="hero-meta" data-reveal id="heroMeta"></ul>
+    </div>
+    <div class="hero-rule" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ ABOUT + SKILLS ============ -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <h2 class="section-title">About Me</h2>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-body" data-reveal>
+          <div id="aboutText" class="prose"></div>
+          <dl class="about-facts" id="aboutFacts"></dl>
+        </div>
+      </div>
+
+      <div class="skills" data-reveal>
+        <h3 class="subhead">What I work with</h3>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WORK ============ -->
+  <section class="section section-alt" id="work">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <h2 class="section-title">Projects</h2>
+      </header>
+      <div class="project-grid" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <h2 class="section-title">Experience &amp; education</h2>
+      </header>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="section section-alt" id="certifications">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <h2 class="section-title">Certifications and Badges</h2>
+      </header>
+      <div class="cert-grid" id="certGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <h2 class="section-title">Get in touch</h2>
+      </header>
+      <div class="contact-body" data-reveal>
+        <p class="contact-pitch" data-bind="contact.pitch"></p>
+        <div class="contact-email-row">
+          <a class="contact-email" id="contactEmail" href="#"></a>
+          <button class="copy-btn" id="copyEmail" type="button">Copy</button>
+        </div>
+        <ul class="social" id="socialList"></ul>
+        <button class="btn btn-primary" id="resumeBtn" type="button">View résumé</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>&copy; <span id="year"></span> <span data-bind="nav.brand"></span>. All rights reserved.</p>
+    <a href="#top" class="to-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<!-- Certificate lightbox. The native dialog element gives us Escape-to-close,
+    focus trapping and focus restore without any JS of our own. -->
+<dialog class="lightbox" id="certModal" aria-labelledby="certModalTitle">
+  <button class="lightbox-close" id="certModalClose" type="button" aria-label="Close certificate">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <figure class="lightbox-figure">
+    <div class="lightbox-stage">
+      <img id="certModalImg" src="" alt="">
+    </div>
+    <figcaption class="lightbox-caption">
+      <h3 id="certModalTitle"></h3>
+      <p id="certModalMeta"></p>
+      <a id="certModalLink" class="lightbox-link" target="_blank" rel="noopener noreferrer"></a>
+    </figcaption>
+  </figure>
+</dialog>
+
+<!-- Resume preview. Same <dialog> pattern as the certificate lightbox. -->
+<dialog class="lightbox" id="resumeModal" aria-labelledby="resumeModalTitle">
+  <button class="lightbox-close" id="resumeModalClose" type="button" aria-label="Close résumé">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <figure class="lightbox-figure">
+    <div class="lightbox-stage resume-stage" id="resumeStage"></div>
+    <figcaption class="lightbox-caption">
+      <h3 id="resumeModalTitle">Résumé</h3>
+      <p id="resumeModalMeta"></p>
+      <div class="resume-actions">
+        <a class="btn btn-primary" id="resumeDownload" download>
+          <span id="resumeDownloadIcon"></span> Download PDF
+        </a>
+        <a class="lightbox-link" id="resumeOpen" target="_blank" rel="noopener noreferrer">
+          Open in new tab
+        </a>
+      </div>
+    </figcaption>
+  </figure>
+</dialog>
+
+<script src="js/icons.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
