@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -133,7 +134,7 @@
           <button class="copy-btn" id="copyEmail" type="button">Copy</button>
         </div>
         <ul class="social" id="socialList"></ul>
-        <button class="btn btn-primary" id="resumeBtn" type="button">View résumé</button>
+        <a class="btn btn-primary" id="resumeBtn" href="#">Download résumé</a>
       </div>
     </div>
   </section>
@@ -161,28 +162,6 @@
       <h3 id="certModalTitle"></h3>
       <p id="certModalMeta"></p>
       <a id="certModalLink" class="lightbox-link" target="_blank" rel="noopener noreferrer"></a>
-    </figcaption>
-  </figure>
-</dialog>
-
-<!-- Resume preview. Same <dialog> pattern as the certificate lightbox. -->
-<dialog class="lightbox" id="resumeModal" aria-labelledby="resumeModalTitle">
-  <button class="lightbox-close" id="resumeModalClose" type="button" aria-label="Close résumé">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <figure class="lightbox-figure">
-    <div class="lightbox-stage resume-stage" id="resumeStage"></div>
-    <figcaption class="lightbox-caption">
-      <h3 id="resumeModalTitle">Résumé</h3>
-      <p id="resumeModalMeta"></p>
-      <div class="resume-actions">
-        <a class="btn btn-primary" id="resumeDownload" download>
-          <span id="resumeDownloadIcon"></span> Download PDF
-        </a>
-        <a class="lightbox-link" id="resumeOpen" target="_blank" rel="noopener noreferrer">
-          Open in new tab
-        </a>
-      </div>
     </figcaption>
   </figure>
 </dialog>
