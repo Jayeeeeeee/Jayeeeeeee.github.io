@@ -166,6 +166,28 @@
   </figure>
 </dialog>
 
+<!-- Resume preview. Same <dialog> pattern as the certificate lightbox. -->
+<dialog class="lightbox" id="resumeModal" aria-labelledby="resumeModalTitle">
+  <button class="lightbox-close" id="resumeModalClose" type="button" aria-label="Close résumé">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <figure class="lightbox-figure">
+    <div class="lightbox-stage resume-stage" id="resumeStage"></div>
+    <figcaption class="lightbox-caption">
+      <h3 id="resumeModalTitle">Résumé</h3>
+      <p id="resumeModalMeta"></p>
+      <div class="resume-actions">
+        <a class="btn btn-primary" id="resumeDownload" download>
+          <span id="resumeDownloadIcon"></span> Download PDF
+        </a>
+        <a class="lightbox-link" id="resumeOpen" target="_blank" rel="noopener noreferrer">
+          Open in new tab
+        </a>
+      </div>
+    </figcaption>
+  </figure>
+</dialog>
+
 <script src="js/icons.js"></script>
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
