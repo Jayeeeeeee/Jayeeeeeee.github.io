@@ -175,7 +175,7 @@ const SITE = {
       "my skills to a real-world project, and gain valuable experience in the industry. " +
       "The fastest way to reach me is by email.",
     email: "jayealojado@gmail.com",
-    resume: "assets/resume.pdf",
+    resume: "assets/Alojado_Resume.pdf",
     socials: [
       { label: "GitHub",   url: "https://github.com/Jayeeeeeee" },
       { label: "LinkedIn", url: "https://www.linkedin.com/in/jason-alojado-28159b388/" },
